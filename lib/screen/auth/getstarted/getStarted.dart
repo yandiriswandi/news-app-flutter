@@ -1,5 +1,7 @@
 import 'package:core_component/config/color/color.dart';
 import 'package:core_component/config/custom/custom_button.dart';
+import 'package:core_component/main.dart';
+import 'package:core_component/screen/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -42,7 +44,11 @@ class GetStarted extends StatelessWidget {
               CustomButton(
                 text: "Masuk",
                 onPressed: () {
-                  print("masuk");
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => MainScreen()),
+                    (route) => false, // Menghapus semua rute sebelumnya
+                  );
                 },
               ),
               SizedBox(height: 10),
