@@ -8,7 +8,16 @@ class AppImage {
 }
 
 class AppIcon {
-  static const humberger = 'assets/icons/MenuIcon.png';
-  static const backButton = "assets/icons/backIcon.png";
+  static const iconHumberger = 'assets/icons/MenuIcon.png';
+  static const iconBackButton = "assets/icons/backIcon.png";
   static const iconGoogle = "assets/icons/iconGo.png";
+  static const iconSearch = "assets/icons/iconSearch.png";
+  static const iconArrowForwardCircle = "assets/icons/arrow-forward-circle.png";
+  //setting icon
+  static const iconBug = "assets/icons/bug-outline.png";
+  static const iconFolder = "assets/icons/folder-open-outline.png";
+  static const iconPeople = "assets/icons/person-outline.png";
+  static const iconNews = "assets/icons/newspaper-outline.png";
+  static const iconBell = "assets/icons/notifications-outline.png";
+  static const iconShare = "assets/icons/share-social-outline.png";
 }

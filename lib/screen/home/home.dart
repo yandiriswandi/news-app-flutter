@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
           child: IconButton(
             padding: EdgeInsets.zero, // hilangkan padding default
             constraints: BoxConstraints(), // hilangkan batas default ukuran
-            icon: Image.asset(AppIcon.humberger, width: 40, height: 40),
+            icon: Image.asset(AppIcon.iconHumberger, width: 40, height: 40),
             onPressed: () {
               print("hallo");
             },
