@@ -1,9 +1,19 @@
-import 'package:core_component/screen/auth/getstarted/getStarted.dart';
 import 'package:core_component/screen/home/home.dart';
 import 'package:core_component/screen/settings/setting.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    final app = await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    print('Firebase initialized: ${app.name}');
+  } catch (e) {
+    print('Firebase init error: $e');
+  }
   runApp(const MyApp());
 }
 

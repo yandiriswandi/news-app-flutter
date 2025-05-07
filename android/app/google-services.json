@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "676299210480",
+    "project_id": "news-sanbercode",
+    "storage_bucket": "news-sanbercode.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676299210480:android:0c176a8dd3a5c33932cc35",
+        "android_client_info": {
+          "package_name": "com.example.core_component"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJVj2Zud2-d5R0EbOs8HYA2hywy-e90zY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

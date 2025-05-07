@@ -1,9 +1,9 @@
 import 'package:core_component/config/color/color.dart';
 import 'package:core_component/config/custom/custom_button.dart';
-import 'package:core_component/main.dart';
-import 'package:core_component/screen/home/home.dart';
+import 'package:core_component/screen/auth/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 
 class GetStarted extends StatelessWidget {
   const GetStarted({super.key});
@@ -44,9 +44,14 @@ class GetStarted extends StatelessWidget {
               CustomButton(
                 text: "Masuk",
                 onPressed: () {
+                  // Navigator.pushAndRemoveUntil(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => MainScreen()),
+                  //   (route) => false, // Menghapus semua rute sebelumnya
+                  // );
                   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => MainScreen()),
+                    MaterialPageRoute(builder: (context) => LoginPage()),
                     (route) => false, // Menghapus semua rute sebelumnya
                   );
                 },

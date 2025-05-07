@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 // import 'package:firebase_core/firebase_core.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
