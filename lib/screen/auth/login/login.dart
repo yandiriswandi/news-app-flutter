@@ -4,19 +4,20 @@ import 'package:core_component/config/custom/custom_button.dart';
 import 'package:core_component/config/custom/dividerText.dart';
 import 'package:core_component/config/custom/showToast.dart';
 import 'package:core_component/config/listImage/app_image.dart';
-import 'package:core_component/screen/auth/register/register.dart';
+import 'package:core_component/routes/app_routes_named.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class PageLogin extends StatefulWidget {
+  const PageLogin({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<PageLogin> createState() => _PageLoginState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _PageLoginState extends State<PageLogin> {
   bool isloading = false;
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
@@ -28,10 +29,10 @@ class _LoginPageState extends State<LoginPage> {
     try {
       await Future.delayed(Duration(seconds: 2));
       final response = await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _emailController.text,
-        password: _passwordController.text,
+        email: _emailController.text, // yandiriswandi@gmail.com
+        password: _passwordController.text, // Pass1234!
       );
-
+      Get.offAllNamed(AppRoutesNamed.pageMain);
       showAppSnackBar(
         context: context,
         message: "Berhasil login",
@@ -169,10 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => RegisterPage()),
-                      );
+                      Get.offNamed(AppRoutesNamed.pageRegister);
                     },
                     child: Text(
                       ' Mendaftar. ',

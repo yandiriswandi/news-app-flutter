@@ -1,4 +1,5 @@
 import 'package:core_component/config/listImage/app_image.dart';
+import 'package:core_component/routes/app_routes_named.dart';
 
 class NewsModel {
   final String image;
@@ -31,12 +32,14 @@ class SettingList {
   final String icon;
   final String title;
   final String description;
+  final String route;
   final int status;
 
   SettingList({
     required this.id,
     required this.icon,
     required this.title,
+    required this.route,
     required this.description,
     required this.status,
   });
@@ -47,6 +50,7 @@ List<SettingList> settingData = [
     id: 1,
     icon: AppIcon.iconPeople,
     title: "Profile settings",
+    route: "",
     description: "Settings regarding your profile",
     status: 1,
   ),
@@ -54,6 +58,7 @@ List<SettingList> settingData = [
     id: 2,
     icon: AppIcon.iconNews,
     title: "News settings",
+    route: "",
     description: "Choose your favourite topics",
     status: 1,
   ),
@@ -62,13 +67,23 @@ List<SettingList> settingData = [
     icon: AppIcon.iconBell,
     title: "Notifications",
     description: "When would you like to be notified",
+    route: "",
     status: 1,
   ),
   SettingList(
     id: 4,
     icon: AppIcon.iconFolder,
     title: "Subscriptions",
+    route: "",
     description: "Currently, you are in Starter Plan",
+    status: 1,
+  ),
+  SettingList(
+    id: 5,
+    icon: AppIcon.iconLogout,
+    title: "Logout",
+    route: AppRoutesNamed.pageStarted,
+    description: "Safely signs out of the account",
     status: 1,
   ),
 ];
@@ -78,6 +93,7 @@ List<SettingList> settingOtherData = [
     id: 4,
     icon: AppIcon.iconBug,
     title: "Bug report",
+    route: "",
     description: "Report bugs very easy",
     status: 2,
   ),
@@ -85,6 +101,7 @@ List<SettingList> settingOtherData = [
     id: 5,
     icon: AppIcon.iconShare,
     title: "Share the app",
+    route: "",
     description: "Share on social media networks",
     status: 2,
   ),

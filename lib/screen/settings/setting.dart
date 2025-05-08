@@ -1,11 +1,14 @@
+import 'package:core_component/config/custom/showToast.dart';
+import 'package:core_component/config/custom/swalFire.dart';
 import 'package:core_component/config/listImage/app_image.dart';
 import 'package:core_component/models/news_model.dart';
-import 'package:core_component/screen/auth/getstarted/getStarted.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Setting extends StatelessWidget {
-  const Setting({super.key});
+class PageSetting extends StatelessWidget {
+  const PageSetting({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +69,7 @@ class Setting extends StatelessWidget {
                       icon: settingData[index].icon,
                       title: settingData[index].title,
                       description: settingData[index].description,
+                      route: settingData[index].route,
                     );
                   },
                 ),
@@ -84,6 +88,7 @@ class Setting extends StatelessWidget {
                       icon: settingOtherData[index].icon,
                       title: settingOtherData[index].title,
                       description: settingOtherData[index].description,
+                      route: settingOtherData[index].route,
                     );
                   },
                 ),
@@ -102,15 +107,38 @@ class ListSetting extends StatelessWidget {
     required this.icon,
     required this.title,
     required this.description,
+    required this.route,
   });
 
   final String icon;
   final String title;
   final String description;
+  final String route;
+
+  void handleNavigate(BuildContext context, String route) async {
+    if (route != "") {
+      final confirmed = await swalFire(
+        context: context,
+        title: "Konfirmasi",
+        message: "Apakah Anda yakin ingin keluar akun?",
+      );
+      if (confirmed == false) return;
+      Get.offAllNamed(route);
+      return;
+    }
+    return showAppSnackBar(
+      context: context,
+      message: "Coming soon!!",
+      backgroundColor: Colors.blue,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: () {
+        handleNavigate(context, route);
+      },
       contentPadding: EdgeInsets.zero,
       title: Text(title, style: GoogleFonts.poppins()),
       subtitle: Text(
@@ -121,7 +149,6 @@ class ListSetting extends StatelessWidget {
         width: 54,
         height: 54,
         decoration: BoxDecoration(
-          // image: DecorationImage(image: AssetImage(icon)),
           color: Color(0xff141e2814), // warna HEX, contoh: biru
           borderRadius: BorderRadius.circular(10),
         ),

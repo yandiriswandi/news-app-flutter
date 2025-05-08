@@ -20,4 +20,5 @@ class AppIcon {
   static const iconNews = "assets/icons/newspaper-outline.png";
   static const iconBell = "assets/icons/notifications-outline.png";
   static const iconShare = "assets/icons/share-social-outline.png";
+  static const iconLogout = "assets/icons/logout.png";
 }

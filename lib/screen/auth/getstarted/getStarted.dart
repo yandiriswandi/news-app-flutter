@@ -1,12 +1,13 @@
 import 'package:core_component/config/color/color.dart';
 import 'package:core_component/config/custom/custom_button.dart';
+import 'package:core_component/routes/app_routes_named.dart';
 import 'package:core_component/screen/auth/login/login.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-class GetStarted extends StatelessWidget {
-  const GetStarted({super.key});
+class PageGetStarted extends StatelessWidget {
+  const PageGetStarted({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,23 +45,14 @@ class GetStarted extends StatelessWidget {
               CustomButton(
                 text: "Masuk",
                 onPressed: () {
-                  // Navigator.pushAndRemoveUntil(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => MainScreen()),
-                  //   (route) => false, // Menghapus semua rute sebelumnya
-                  // );
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
-                    (route) => false, // Menghapus semua rute sebelumnya
-                  );
+                  Get.toNamed(AppRoutesNamed.pageLogin);
                 },
               ),
               SizedBox(height: 10),
               CustomButton(
                 text: "Daftar",
                 onPressed: () {
-                  print("daftar");
+                  Get.toNamed(AppRoutesNamed.pageRegister);
                 },
                 backgroundColor: Colors.white,
                 textColor: AppColor.primaryColor,

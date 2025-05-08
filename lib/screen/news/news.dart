@@ -2,8 +2,8 @@ import 'package:core_component/config/listImage/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class News extends StatelessWidget {
-  const News({super.key});
+class PageNews extends StatelessWidget {
+  const PageNews({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,9 @@
+import 'package:core_component/routes/app_routes.dart';
 import 'package:core_component/screen/home/home.dart';
 import 'package:core_component/screen/settings/setting.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -22,8 +24,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const MainScreen(),
+    return GetMaterialApp(
+      getPages: AppRoutes.routes,
+      // home: const MainScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -40,9 +43,9 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    Home(),
+    PageHome(),
     Center(child: Text("Search Page")),
-    Setting(),
+    PageSetting(),
   ];
 
   void _onItemTapped(int index) {

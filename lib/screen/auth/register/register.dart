@@ -6,19 +6,21 @@ import 'package:core_component/config/custom/dividerText.dart';
 import 'package:core_component/config/custom/showToast.dart';
 import 'package:core_component/config/custom/swalFire.dart';
 import 'package:core_component/config/listImage/app_image.dart';
+import 'package:core_component/routes/app_routes_named.dart';
 import 'package:core_component/screen/auth/login/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({super.key});
+class PageRegister extends StatefulWidget {
+  const PageRegister({super.key});
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<PageRegister> createState() => _PageRegisterState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _PageRegisterState extends State<PageRegister> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
@@ -43,6 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
             email: _emailController.text,
             password: _passwordController.text,
           );
+      Get.offNamed(AppRoutesNamed.pageLogin);
       showAppSnackBar(
         context: context,
         message: "Berhasil mendaftar",
@@ -199,10 +202,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
-                      );
+                      Get.offNamed(AppRoutesNamed.pageLogin);
                     },
                     child: Text(
                       ' masuk.',

@@ -6,14 +6,14 @@ import 'package:google_fonts/google_fonts.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_core/firebase_core.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class PageHome extends StatefulWidget {
+  const PageHome({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<PageHome> createState() => _PageHomeState();
 }
 
-class _HomeState extends State<Home> {
+class _PageHomeState extends State<PageHome> {
   final List<String> imageUrls = [
     AppImage.imageCarousel,
     AppImage.imageCarousel,
@@ -112,7 +112,7 @@ class ListNews extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => News()),
+          MaterialPageRoute(builder: (context) => PageNews()),
         );
       },
       child: SizedBox(
